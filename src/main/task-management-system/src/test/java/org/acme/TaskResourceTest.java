@@ -9,12 +9,12 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 class TaskResourceTest {
     @Test
-    void testHelloEndpoint() {
+    void testDatabaseConnection() {
         given()
-          .when().get("/hello")
+          .when().get("/db")
           .then()
              .statusCode(200)
-             .body(is("Hello from Quarkus REST"));
+             .body(is("Connected to database: PostgreSQL"));
     }
 
 }
