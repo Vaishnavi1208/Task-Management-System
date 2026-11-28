@@ -11,9 +11,9 @@ import jakarta.persistence.Table;
 @PrimaryKeyJoinColumn(name = "board_id")
 public class Backlog extends Board {
 
-    protected Backlog() {}
+  protected Backlog() {}
 
-    public Backlog(String name) {
-        super(name);
-    }
+  public Backlog(String name) {
+    super(name);
+  }
 }

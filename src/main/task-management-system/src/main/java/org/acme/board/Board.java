@@ -12,7 +12,6 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-
 import java.util.HashSet;
 import java.util.Set;
 import org.acme.task.Task;
@@ -24,36 +23,36 @@ import org.acme.task.Task;
 @DiscriminatorValue("BOARD")
 public class Board {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "board_id")
-    private Long boardId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "board_id")
+  private Long boardId;
 
-    @Column(nullable = false)
-    private String name;
+  @Column(nullable = false)
+  private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    private Set<Task> tasks = new HashSet<>();
+  @ManyToMany(fetch = FetchType.LAZY)
+  private Set<Task> tasks = new HashSet<>();
 
-    protected Board() {}
+  protected Board() {}
 
-    public Board(String name) {
-        this.name = name;
-    }
+  public Board(String name) {
+    this.name = name;
+  }
 
-    public Long getBoardId() {
-        return boardId;
-    }
+  public Long getBoardId() {
+    return boardId;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public Set<Task> getTasks() {
-        return tasks;
-    }
+  public Set<Task> getTasks() {
+    return tasks;
+  }
 }
